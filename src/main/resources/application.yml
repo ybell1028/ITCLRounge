@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    group:
+      <dev>: dev,
+      <prod> : prod
+    include:
+
+sample:
+   value: default
