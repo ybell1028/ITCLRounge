@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long user_idx;
+    private Long user_idx;
     @Column(length = 30, nullable = false)
     private String id;
     @Column(length = 20, nullable = false)
@@ -25,6 +25,7 @@ public class User extends BaseTimeEntity {
     private String email;
     private String picture;
     private String access_token;
+
 //    user_idx     serial      not null
 //    constraint user_tb_pk
 //    primary key,
