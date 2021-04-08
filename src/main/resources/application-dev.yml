@@ -2,6 +2,18 @@ spring:
   config:
     activate:
       on-profile: dev
-
+  h2:
+    console:
+      enabled: true # 사용불가
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 sample:
   value: dev

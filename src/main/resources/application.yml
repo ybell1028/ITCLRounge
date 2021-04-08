@@ -1,14 +1,13 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /
-
 spring:
   profiles:
-    group:
-      <dev>: dev,
-      <prod> : prod
-    include:
+    active: dev
+  #    datasource:
+  #      driver-class-name: org.h2.Driver
+  #      url: jdbc:h2:mem:userdb;DB_CLOSE_DELAY=-1
+  #      username: sa
+  #      password: 1028
+server:
+  port: 8081
 
 sample:
-   value: default
+  value: default
