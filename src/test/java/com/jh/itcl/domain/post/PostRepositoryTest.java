@@ -1,6 +1,7 @@
 package com.jh.itcl.domain.post;
 
 import com.jh.itcl.domain.user.User;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,10 @@ public class PostRepositoryTest {
     @Autowired
     PostRepository postRepository;
 
-    //    @AfterEach // JUnit에서 단위 테스트가 끝날 때마다 수행되는 메소드
-//    public void cleanup() {
-//        postRepository.deleteAll();
-//    }
+    @AfterEach // JUnit에서 단위 테스트가 끝날 때마다 수행되는 메소드
+    public void cleanup() {
+        postRepository.deleteAll();
+    }
 
     @Test
     public void 게시글저장_불러오기() {
