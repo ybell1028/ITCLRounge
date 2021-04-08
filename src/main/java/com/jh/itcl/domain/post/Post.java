@@ -23,7 +23,7 @@ public class Post extends BaseTimeEntity {
     @ManyToOne(cascade = CascadeType.ALL)
     // @JoinColumn 어노테이션은 외래 키를 매핑 할 때 사용합니다.
     // name 속성에는 매핑 할 외래 키 이름을 지정합니다.
-    // Post 엔티티의 경우 User 엔티티의 user_idx 필드를 외래 키로 가지므로, user_user_idx를 작성하면 됩니다.
+    // Post 엔티티의 경우 User 엔티티의 user_idx 필드를 외래 키로 가지므로, user_idx를 작성하면 됩니다.
     @JoinColumn(name = "user_idx")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
