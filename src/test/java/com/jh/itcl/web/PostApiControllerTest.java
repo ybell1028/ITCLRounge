@@ -41,7 +41,19 @@ public class PostApiControllerTest {
         // given
         // 지금은 User 객체를 생성하고 있지만 후에는 access 토큰으로 정보를 받아보아야하나?
         // 아니면 access 토큰으로 만드는 객체를 Bean으로 만들어서 Autowired로 의존성을 주입해줘야 하나?
-        User user = new User("ybell1028", "google", "황종훈", "ybell1028@gmail.com", null, null);
+        String id = "ybell1028";
+        String platform = "google";
+        String name = "황종훈";
+        String email = "ybell1028@gmail.com";
+
+        User user = User.builder()
+                .id(id)
+                .platform(platform)
+                .name(name)
+                .email(email)
+                .picture(null)
+                .access_token(null)
+                .build();
 
         String title = "테스트 게시글";
         String category = "개발";

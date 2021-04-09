@@ -17,6 +17,20 @@ import static org.assertj.core.api.Assertions.assertThat;
 // 별 다른 설정 없이 @SpringBootTest를 사용할 경우 H2 데이터베이스 사용
 @SpringBootTest
 public class PostRepositoryTest {
+    String id = "ybell1028";
+    String platform = "google";
+    String name = "황종훈";
+    String email = "ybell1028@gmail.com";
+
+    User user = User.builder()
+            .id(id)
+            .platform(platform)
+            .name(name)
+            .email(email)
+            .picture(null)
+            .access_token(null)
+            .build();
+
     @Autowired
     PostRepository postRepository;
 
@@ -27,8 +41,6 @@ public class PostRepositoryTest {
 
     @Test
     public void 게시글저장_불러오기() {
-        User user = new User("ybell1028", "google", "황종훈", "ybell1028@gmail.com", null, null);
-
         String title = "테스트 게시글";
         String category = "개발";
         String contents = "테스트 본문";
@@ -61,7 +73,6 @@ public class PostRepositoryTest {
     public void BaseTimeEntity_등록() {
         //given
         LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
-        User user = new User("ybell1028", "google", "황종훈", "ybell1028@gmail.com", null, null);
 
         String title = "테스트 게시글";
         String category = "개발";

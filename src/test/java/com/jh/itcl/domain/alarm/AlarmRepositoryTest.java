@@ -26,7 +26,20 @@ public class AlarmRepositoryTest {
 
     @Test
     public void 알람저장_불러오기(){
-        User user = new User("ybell1028", "google", "황종훈", "ybell1028@gmail.com", null, null);
+        String id = "ybell1028";
+        String platform = "google";
+        String name = "황종훈";
+        String email = "ybell1028@gmail.com";
+
+        User user = User.builder()
+                .id(id)
+                .platform(platform)
+                .name(name)
+                .email(email)
+                .picture(null)
+                .access_token(null)
+                .build();
+
         String club_name = "YAPP";
         String club_url = "http://yapp.co.kr/";
         String club_logo = "https://image.rocketpunch.com/company/41341/yapp_logo_1542481743.jpeg?s=400x400&t=inside";
