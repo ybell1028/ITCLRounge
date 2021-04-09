@@ -51,14 +51,5 @@ public class User extends BaseTimeEntity {
         this.access_token = access_token;
     }
 
-    public User toEntity(){
-        return User.builder()
-                .id(id)
-                .platform(platform)
-                .name(name)
-                .email(email)
-                .picture(picture)
-                .access_token(access_token)
-                .build();
-    }
+
 }

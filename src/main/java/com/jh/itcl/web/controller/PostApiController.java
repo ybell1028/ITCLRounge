@@ -13,6 +13,7 @@ public class PostApiController {
     private final PostService postService;
 
     @PostMapping("/api/post")
+    //header를 통해 Access Token을 받으면 user_idx를 추출해서 PostSaveRequestDto를 toEntitiy로 생성
     public Long save(@RequestBody PostSaveRequestDto requestDto){
         return postService.save(requestDto);
     }

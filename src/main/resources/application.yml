@@ -1,13 +1,17 @@
 spring:
   profiles:
     active: dev
-  #    datasource:
-  #      driver-class-name: org.h2.Driver
-  #      url: jdbc:h2:mem:userdb;DB_CLOSE_DELAY=-1
-  #      username: sa
-  #      password: 1028
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
 server:
   port: 8081
-
 sample:
   value: default

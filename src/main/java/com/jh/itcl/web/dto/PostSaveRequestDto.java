@@ -28,6 +28,7 @@ public class PostSaveRequestDto {
 
 
     public Post toEntity(){
+        //header를 통해 Access Token을 받으면 user_idx를 추출해서 PostSaveRequestDto를 toEntitiy로 생성
         return Post.builder()
                 .user(user)
                 .category(category)
