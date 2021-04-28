@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_idx;
+    private long user_idx;
     @Column(length = 30, nullable = false)
     private String id;
     @Column(length = 20, nullable = false)
@@ -24,32 +24,23 @@ public class User extends BaseTimeEntity {
     @Column(length = 40, nullable = false)
     private String email;
     private String picture;
-    private String access_token;
-
-//    user_idx     serial      not null
-//    constraint user_tb_pk
-//    primary key,
-//    id           varchar(30) not null,
-//    platform     varchar(20) not null,
-//    name         varchar(20) not null,
-//    email        varchar(40) not null,
-//    picture      varchar,
-//    access_token varchar,
-//    created_at   timestamp,
-//    modified_at  timestamp,
-//    club         varchar
-//    constraint user_tb_club_fkey
-//    references club_tb
 
     @Builder
-    public User(String id, String platform, String name, String email, String picture, String access_token) {
+    public User(String id, String platform, String name, String email, String picture) {
         this.id = id;
         this.platform = platform;
         this.name = name;
         this.email = email;
         this.picture = picture;
-        this.access_token = access_token;
     }
 
-
+    public User toEntity(){
+        return User.builder()
+                .id(id)
+                .platform(platform)
+                .name(name)
+                .email(email)
+                .picture(picture)
+                .build();
+    }
 }

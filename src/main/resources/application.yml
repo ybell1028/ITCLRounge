@@ -1,17 +1,26 @@
 spring:
   profiles:
     active: dev
+  error:
+    include-exception: true
+    include-stacktrace: always
   session:
     store-type: jdbc
     jdbc:
       initialize-schema: always
   jpa:
-    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
     properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
       hibernate:
-        format_sql: true
-    open-in-view: false
+        format_sql: true # sql prettier
+    show-sql: true
+    open-in-view: false # 안쓰면 warning 뜸
+
 server:
   port: 8081
-sample:
-  value: default
+  servlet:
+    context-path: /
